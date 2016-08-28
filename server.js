@@ -1,20 +1,22 @@
 var express = require('express'); 
 var app = express();
 var PORT = 3000;
-var middleWare = {
 
-	requireAuthentication : function(req,res,next){
+var middleWare = require('./middleWare.js');
+// var middleWare = {
 
-		console.log("private route hit");
-		next();
-	},
-	logger: function(req,res,next){
-		// var currentDate = new Date().toString();
-		console.log(req.hostname+' '+req.method+' '+req.url +' '+new Date().toString());
-		next();
-	}
+// 	requireAuthentication : function(req,res,next){
 
-};
+// 		console.log("private route hit");
+// 		next();
+// 	},
+// 	logger: function(req,res,next){
+// 		// var currentDate = new Date().toString();
+// 		console.log(req.hostname+' '+req.method+' '+req.url +' '+new Date().toString());
+// 		next();
+// 	}
+
+// };
 
 app.use(middleWare.logger);
 
